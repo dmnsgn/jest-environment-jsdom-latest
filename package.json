@@ -1,6 +1,6 @@
 {
   "name": "jest-environment-jsdom-latest",
-  "version": "20.0.4",
+  "version": "21.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/dmnsgn/jest-environment-jsdom-latest.git"
