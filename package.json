@@ -7,14 +7,14 @@
   },
   "license": "BSD-3-Clause",
   "main": "build/index.js",
-  "scripts" : {
+  "scripts": {
     "build": "node ./scripts/build.js",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "jest-mock": "^20.0.3",
     "jest-util": "^20.0.3",
-    "jsdom": "^11.1.0"
+    "jsdom": "latest"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
