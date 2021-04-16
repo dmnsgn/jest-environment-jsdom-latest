@@ -73,5 +73,13 @@
   },
   "engines": {
     "node": "^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0"
+  },
+  "snowdev": {
+    "release": {
+      "types": false,
+      "format": false,
+      "lint": false,
+      "docs": false
+    }
   }
 }
