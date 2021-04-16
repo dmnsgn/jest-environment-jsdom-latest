@@ -1,43 +1,77 @@
 {
   "name": "jest-environment-jsdom-latest",
-  "version": "21.0.1",
+  "version": "26.6.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/dmnsgn/jest-environment-jsdom-latest.git"
   },
-  "license": "BSD-3-Clause",
-  "main": "build/index.js",
+  "license": "MIT",
+  "exports": {
+    ".": "./build/index.js",
+    "./package.json": "./package.json"
+  },
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
   "scripts": {
-    "build": "node ./scripts/build.js",
+    "build:js": "node ./scripts/build.js",
+    "build:ts": "node ./scripts/buildTs.js",
+    "build": "npm run build:js && npm run build:ts",
     "prepublishOnly": "npm run build"
   },
+  "prettier": {
+    "arrowParens": "avoid",
+    "bracketSpacing": false,
+    "proseWrap": "never",
+    "singleQuote": true,
+    "trailingComma": "all",
+    "overrides": [
+      {
+        "files": "website/**/*.js",
+        "options": {
+          "trailingComma": "es5"
+        }
+      },
+      {
+        "files": ".yarnrc.yml",
+        "options": {
+          "singleQuote": false
+        }
+      }
+    ]
+  },
   "dependencies": {
-    "jest-mock": "^20.0.3",
-    "jest-util": "^20.0.3",
+    "@jest/environment": "^26.6.2",
+    "@jest/fake-timers": "^26.6.2",
+    "@jest/types": "^26.6.2",
+    "@types/node": "*",
+    "jest-mock": "^26.6.2",
+    "jest-util": "^26.6.2",
     "jsdom": "latest"
   },
   "devDependencies": {
-    "babel-core": "^6.25.0",
-    "babel-plugin-syntax-trailing-function-commas": "^6.22.0",
-    "babel-plugin-transform-async-to-generator": "^6.24.1",
-    "babel-plugin-transform-es2015-destructuring": "^6.23.0",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
-    "babel-plugin-transform-es2015-parameters": "^6.24.1",
-    "babel-plugin-transform-flow-strip-types": "^6.22.0",
-    "babel-plugin-transform-strict-mode": "^6.24.1",
-    "chalk": "^2.1.0",
-    "glob": "^7.1.2",
-    "micromatch": "^3.0.4",
-    "mkdirp": "^0.5.1",
-    "prettier": "^1.5.3",
-    "rollup": "^0.46.2",
-    "rollup-plugin-babel": "^3.0.1",
-    "rollup-plugin-commonjs": "^8.1.0",
-    "rollup-plugin-flow": "^1.1.1",
-    "rollup-plugin-json": "^2.3.0",
-    "rollup-plugin-node-builtins": "^2.1.2",
-    "rollup-plugin-node-globals": "^1.1.0",
-    "rollup-plugin-node-resolve": "^3.0.0",
-    "string-length": "^2.0.0"
+    "@babel/core": "^7.3.4",
+    "@babel/plugin-proposal-class-properties": "^7.3.4",
+    "@babel/plugin-transform-modules-commonjs": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "@types/jsdom": "^16.2.10",
+    "babel-plugin-replace-ts-export-assignment": "^0.0.2",
+    "chalk": "^4.0.0",
+    "execa": "^5.0.0",
+    "glob": "^7.1.1",
+    "globby": "^11.0.0",
+    "micromatch": "^4.0.4",
+    "prettier": "^2.1.1",
+    "read-pkg": "^5.2.0",
+    "string-length": "^4.0.1",
+    "strip-json-comments": "^3.1.1",
+    "throat": "^6.0.1",
+    "typescript": "^4.0.2",
+    "yarn": "^1.22.10"
+  },
+  "engines": {
+    "node": "^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0"
   }
 }
