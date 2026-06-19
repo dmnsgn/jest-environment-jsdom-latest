@@ -16,6 +16,7 @@
     "build:js": "node ./scripts/build.js",
     "build:ts": "node ./scripts/buildTs.js",
     "build": "npm run build:js && npm run build:ts",
+    "test:package": "node ./scripts/verifyPackageFiles.js",
     "prepublishOnly": "npm run build"
   },
   "prettier": {
