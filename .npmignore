@@ -1,7 +1,6 @@
 **/__mocks__/**
 **/__tests__/**
 /src
-yarn.lock
 package-lock.json
 /scripts
 .babelrc

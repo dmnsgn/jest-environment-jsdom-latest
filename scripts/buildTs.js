@@ -98,7 +98,6 @@
   //  });
 
    const args = [
-     'tsc',
      '-b',
      '--force',
      ...packagesWithTs,
@@ -108,7 +107,7 @@
    console.log(chalk.inverse(' Building TypeScript definition files '));
 
    try {
-     await execa('yarn', args, {stdio: 'inherit'});
+     await execa('tsc', args, {preferLocal: true, stdio: 'inherit'});
      console.log(
        chalk.inverse.green(' Successfully built TypeScript definition files '),
      );

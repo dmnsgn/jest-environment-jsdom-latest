@@ -29,7 +29,6 @@
     "rootDir": "src"
   },
   "exclude": [
-    ".yarn/releases/*",
     "**/__tests__/**/*",
     "**/__mocks__/**/*",
     "**/build/**/*"
