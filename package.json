@@ -1,9 +1,9 @@
 {
   "name": "jest-environment-jsdom-latest",
-  "version": "26.6.2",
+  "version": "26.6.3",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dmnsgn/jest-environment-jsdom-latest.git"
+    "url": "git+https://github.com/dmnsgn/jest-environment-jsdom-latest.git"
   },
   "license": "MIT",
   "exports": {
